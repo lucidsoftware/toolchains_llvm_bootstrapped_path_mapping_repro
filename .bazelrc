@@ -1,0 +1,14 @@
+# Required for toolchains_llvm_bootstrapped
+common --repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+common --repo_env=BAZEL_NO_APPLE_CPP_TOOLCHAIN=1
+
+# Enable disk cache (required for path mapping to activate)
+common --disk_cache=.bazel_disk_cache
+
+# Enable path mapping
+common --incompatible_modify_execution_info_additive
+common --experimental_output_paths=strip
+
+# Uncomment these to mitigate the bug
+# common --modify_execution_info=RunBinary=-supports-path-mapping
+# common --modify_execution_info=CopyToDirectory=-supports-path-mapping

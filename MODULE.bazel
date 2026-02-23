@@ -1,0 +1,11 @@
+module(
+    name = "path_mapping_repro",
+    version = "0.0.0",
+)
+
+bazel_dep(name = "rules_cc", version = "0.2.16")
+bazel_dep(name = "llvm", version = "0.6.0")
+
+register_toolchains(
+    "@llvm//toolchain:all",
+)
